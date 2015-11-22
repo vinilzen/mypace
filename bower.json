@@ -1,0 +1,27 @@
+{
+  "name": "MyPace",
+  "authors": [
+    "vinilzen <marchukilya@gmail.com>"
+  ],
+  "description": "Pace calculation",
+  "main": "p.html",
+  "moduleType": [],
+  "keywords": [
+    "pace",
+    "calc"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "Bootflat": "~2.0.4",
+    "Stepper": "~3.0.8",
+    "jquery": "~2.1.4"
+  }
+}
