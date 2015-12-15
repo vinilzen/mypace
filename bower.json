@@ -4,7 +4,7 @@
     "vinilzen <marchukilya@gmail.com>"
   ],
   "description": "Pace calculation",
-  "main": "p.html",
+  "main": "index.html",
   "moduleType": [],
   "keywords": [
     "pace",
@@ -21,7 +21,6 @@
   ],
   "dependencies": {
     "Bootflat": "~2.0.4",
-    "Stepper": "~3.0.8",
     "jquery": "~2.1.4"
   }
 }

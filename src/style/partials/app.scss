@@ -1,3 +1,62 @@
-body {
-	background-color: green;
+@font-face {
+	font-family: 'Glyphicons Halflings';
+	src: url('../fonts/bootstrap/glyphicons-halflings-regular.eot');
+	src: url('../fonts/bootstrap/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'), url('../fonts/bootstrap/glyphicons-halflings-regular.woff2') format('woff2'), url('../fonts/bootstrap/glyphicons-halflings-regular.woff') format('woff'), url('../fonts/bootstrap/glyphicons-halflings-regular.ttf') format('truetype'), url('../fonts/bootstrap/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+#app {
+	display: none;
+}
+h2 {
+	font-size: 30px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+.row-distance {
+	max-height: 125px;
+	overflow-y: scroll;
+	.btn {
+		margin-bottom: 10px;
+		position: relative;
+		overflow: hidden;
+	}
+}
+label small {
+  color: #CCD1D9;
+}
+.input-lg {
+	padding:0 5px 0 9px;
+	font-size: 28px;
+	line-height: 46px;
+}
+.navbar {
+	margin-bottom: 0;
+}
+strong {
+	small {
+		font-weight: normal;
+	}
+}
+.fs-number {
+	margin-bottom: 0;
+}
+.form-group {
+	margin-bottom: 0;
+}
+.row-distance button.btn {
+	margin-bottom: 0;
+}
+
+.form-distance {
+	position: absolute;
+	top: -40px;
+}
+input[type="radio"]+span.glyphicon{
+	display: none;
+}
+input[type="radio"]:checked+span.glyphicon {
+// input[ng-checked="true"]+span.glyphicon {
+	display: inline-block;
+} 
+.distance-top {
+	color: #333;
 }

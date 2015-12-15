@@ -1,0 +1,116 @@
+doctype html
+html ng-app="myApp"
+  head lang="ru" 
+    meta charset="utf-8"
+    meta http-equiv="X-UA-Compatible" content="IE=edge"
+    meta name="viewport" content="width=device-width, initial-scale=1"
+    title I build like Rock Star
+    link href="css/bootstrap.css" rel="stylesheet"
+    link href="css/main.css" rel="stylesheet"
+  body
+    nav.navbar.navbar-inverse
+      .navbar-header
+        a.navbar-brand href="#" My Pace
+      #bs-example-navbar-collapse-7.collapse.navbar-collapse
+        p.navbar-text.navbar-right
+          a.navbar-link.btn-lg href="#"
+            span.glyphicon.glyphicon-cog
+    .container-fluid#app ng-controller="PaceCtrl"
+      .row
+        .col-xs-12.col-sm-6.col-sm-offset-3
+          .row
+            .col-xs-12.text-center
+              h2
+                | DISTANCE {{length}}
+                small.distance-top ng-hide="isSelected()" km
+          .row.row-distance
+            .col-xs-6 ng-repeat="distance in distances"
+              label.btn.btn-block.btn-primary for="distance-{{distance.length}}"
+                input.form-controll.form-distance type="radio" id="distance-{{distance.length}}" ng-checked="{{distance.selected}}" value="{{distance.length}}" name="distance" ng-model="distance.selected" ng-change="changeRadio()"
+                span.glyphicon.glyphicon-ok
+                strong
+                  |  {{distance.length}}
+                  small  km
+            / .col-xs-6
+            /   .btn.btn-block.btn-primary
+            /     strong
+            /       | 3
+            /       small  km
+            / .col-xs-6
+            /   .btn.btn-block.btn-primary
+            /     span.glyphicon.glyphicon-ok
+            /     strong
+            /       | 5
+            /       small  km
+            / .col-xs-6
+            /   .btn.btn-block.btn-primary
+            /     strong 
+            /       | 10
+            /       small  km
+            / .col-xs-6
+            /   .btn.btn-block.btn-primary
+            /     strong
+            /       | 21
+            /       small  km
+            / .col-xs-6
+            /   .btn.btn-block.btn-primary
+            /     strong
+            /       | 42.195 
+            /       small  km
+            .col-xs-6
+              .btn.btn-block.btn-primary#plus
+                span.glyphicon.glyphicon-plus
+            .col-xs-6
+              .btn.btn-block.btn-primary
+                strong
+                  |  15
+                  small  km
+            .col-xs-6
+              .btn.btn-block.btn-primary
+                strong
+                  |  30
+                  small  km
+            .col-xs-6
+              .btn.btn-block.btn-primary
+                strong
+                  |  20
+                  small  km
+            .col-xs-6
+              .btn.btn-block.btn-primary
+                strong
+                  |  50
+                  small  km
+            form ng-submit="calcPace()"
+              .col-xs-6
+                .form-group
+                  input.form-control.distance ng-model="length" min="0" max="200" value="0" type="number" placeholder="km" ng-keyup="enableSubmit()"
+              .col-xs-6
+                button.btn-block.btn.btn-success ng-disabled="isEmpty()" type="submit"
+                  span.glyphicon.glyphicon-ok
+                  strong  Submit
+          .row
+            .col-xs-12.text-center
+              h2 TIME
+            .col-xs-4.text-center
+              input.form-control.input-lg.hh ng-model="time" ng-change="blur()" min="0" max="59" placeholder="00" type="number"
+              label
+                small hh
+            .col-xs-4.text-center
+              input.form-control.input-lg.hh ng-blur="" min="0" max="59" value="00" type="number"
+              label
+                small mm
+            .col-xs-4.text-center
+              input.form-control.input-lg.hh ng-blur="" min="0" max="59" value="00" type="number"
+              label
+                small ss
+          .row
+            .col-xs-12.text-center
+              h2 PACE
+              h2 ?
+              h2.hide
+                | 3:45
+                small min/km
+              .btn-group.btn-group-lg.hide
+                .btn.btn-success SAVE
+                .btn.btn-success SHARE
+    script type="text/javascript" src="js/main.js"
